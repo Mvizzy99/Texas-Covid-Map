@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Covid Map</title>
+        <style>
+            button:hover {
+                background-color: lightgreen;
+            }
+            #container {
+                position: relative;
+            }
+            #dateoverlay {
+                position: absolute;
+                top: 50px;
+                left: 525px;
+            }
+            #totaloverlay {
+                position: absolute;
+                top: 100px;
+                left: 35px;
+            }
+            #activeoverlay {
+                position: absolute;
+                top: 550px;
+                left: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Texas COVID-19 Active Cases Map</h1>
+            
+        <!-- For ordering -->
+        <div id='dropdowns'></div><br>
+
+        <!-- Checkboxes for number stat options -->
+        <input type='checkbox' id='total' name='total' />
+        <label for='total'>Display the total number of cases</label><br>
+        <input type='checkbox' id='casenumber' name='casenumber' />
+        <label for='casenumber'>Display the total number of counties with and without 20 active cases</label><br><br>
+        
+        <!-- Button -->
+        <button id='generate' type='button'>Generate!</button><br><br>
+
+        <!-- Map divs, overlaying for text -->
+        <div id='container'>
+            <div id='canvasdiv'><canvas id='canvas' style='display: none;'></canvas></div>
+            <div id='dateoverlay'></div>
+            <div id='totaloverlay'></div>
+            <div id='activeoverlay'></div>
+        </div>
+
+        <!-- The javascripts that makes the magic happen :) -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.4/xlsx.full.min.js"></script> -->
+        <script src='data.js'></script>
+        <script src='counties.js'></script>
+        <script src='canvas.js'></script>
+        <script src='script.js'></script>
+    </body>
+</html>
+
+<!-- 
+    Fetch - right now just download manually and copy paste it
+ -->
